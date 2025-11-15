@@ -1,0 +1,125 @@
+/* Color Variables based on the wireframe */
+:root {
+    --color-blue-bg: #3b82f6; /* A deeper blue for the overall background */
+    --color-add-btn: #BAE6FF; 
+    --color-delete-icon: #33B1FF;
+    --color-white: #ffffff;
+    --color-dark-text: #1f2937;
+    --spacing-xs: 20px;
+    --spacing-sm: 50px;
+    --spacing-md: 60px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-blue-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.task-container {
+    width: 40%; /* Approximating the 40% width from the wireframe */
+    min-width: 300px; /* Ensures readability on small screens */
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-md); /* Approximating the 60px spacing */
+    color: var(--color-dark-text);
+}
+
+/* Input and Button Styling */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: var(--spacing-xs); /* Approximating the 20px spacing below the button */
+}
+
+#task-input {
+    flex: 1; /* Allows the input to take up remaining space */
+    width: 75%; /* The wireframe specifies 75% for the input area */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#add-task-btn {
+    padding: 12px 20px;
+    border: none;
+    background-color: var(--color-add-btn);
+    color: var(--color-dark-text);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#add-task-btn:hover {
+    background-color: #9cd5ff; /* Slightly darker shade of BAE6FF on hover */
+}
+
+/* Task List Styling */
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.task-item label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.task-item:not(:last-child) {
+    margin-bottom: var(--spacing-sm); /* Approximating the 50px vertical spacing between tasks */
+}
+
+.task-item input[type="checkbox"] {
+    margin-right: var(--spacing-xs); /* Approximating the 20px spacing */
+    /* Style the actual checkbox to match a standard design */
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.task-item span {
+    font-size: 16px;
+    color: var(--color-dark-text);
+}
+
+/* Completed Task Styling */
+.task-item.completed span {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Delete Icon Styling */
+.delete-icon {
+    color: var(--color-delete-icon); /* Using Color: #33B1FF */
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+.delete-icon:hover {
+    color: #ff4757; /* A slight red hover for visual confirmation of deletion */
+}
